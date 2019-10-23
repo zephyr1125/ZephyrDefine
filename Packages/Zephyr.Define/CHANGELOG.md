@@ -1,5 +1,11 @@
 # Change log
 
+## [1.0.2] - 2019-10-23
+
+### Changes
+
+* Add CHANGELOG.md meta file.
+
 ## [1.0.1] - 2019-10-23
 
 ### Changes
