@@ -1,0 +1,16 @@
+{
+  "name": "zephyr.define",
+  "version": "1.0.0",
+  "displayName": "Zephyr Define",
+  "description": "A library to make define files for design data making and import at runtime",
+  "unity": "2019.2",
+  "dependencies": {
+    "com.unity.entities": "0.1.1-preview"
+  },
+  "author": {
+    "name": "Zephyr Zhang",
+    "email": "zephyr1125@gmail.com",
+    "url": "https://cowlevel.net/people/zephyr1125"
+  },
+  "type": "library"
+}
