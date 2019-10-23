@@ -1,6 +1,6 @@
 {
   "name": "zephyr.define",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "displayName": "Zephyr Define",
   "description": "A library to make define files for design data making and import at runtime",
   "unity": "2019.2",
