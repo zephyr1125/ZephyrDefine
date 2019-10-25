@@ -1,6 +1,7 @@
 {
     "name": "Zephyr.Define.Test",
     "references": [
+        "Unity.Entities",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Zephyr.Define.Runtime"
