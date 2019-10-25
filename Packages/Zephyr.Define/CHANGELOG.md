@@ -1,5 +1,10 @@
 # Change log
 
+## [1.1.0] - 2019-10-25
+
+### New Features
+* Add DefineCenter.GetDefinesOf\<T\>() to get all defines that contains target component.
+
 ## [1.0.2] - 2019-10-23
 
 ### Changes

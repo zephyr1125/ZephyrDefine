@@ -1,6 +1,6 @@
 ﻿using Zephyr.Define.Runtime;
 
-namespace Zephyr.Define.Test
+namespace Zephyr.Define.Test.Utils
 {
     public class MockDefine : IDefine
     {

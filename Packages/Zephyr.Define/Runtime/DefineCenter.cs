@@ -56,5 +56,20 @@ namespace Zephyr.Define.Runtime
         {
             return _defines;
         }
+
+        public IDefine[] GetDefinesOf<T>() where T : IComponent
+        {
+            var result = new List<IDefine>();
+            
+            foreach (var pair in _defines)
+            {
+                if (pair.Value.GetComponent<T>() != null)
+                {
+                    result.Add(pair.Value);
+                }
+            }
+
+            return result.ToArray();
+        }
     }
 }
