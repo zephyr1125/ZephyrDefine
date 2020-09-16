@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Unity.Entities;
+using Unity.Collections;
 using UnityEngine;
 
 namespace Zephyr.Define.Runtime
@@ -36,7 +36,7 @@ namespace Zephyr.Define.Runtime
             }
         }
 
-        public IDefine GetDefine(NativeString64 defineName)
+        public IDefine GetDefine(FixedString64 defineName)
         {
             return GetDefine(defineName.ToString());
         }
