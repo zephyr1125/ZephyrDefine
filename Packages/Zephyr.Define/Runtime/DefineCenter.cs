@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace Zephyr.Define.Runtime
@@ -25,6 +26,16 @@ namespace Zephyr.Define.Runtime
         public void Init()
         {
             _defines = new Dictionary<string, IDefine>();
+        }
+
+        [MenuItem("Zephyr/Refresh Defines")]
+        public static void RefreshDefines()
+        {
+            var defineCount = Instance()._defines.Count;
+            Instance().Init();
+            Instance().LoadDefineFiles();
+            var newDefineCount = Instance()._defines.Count;
+            Debug.Log($"Defines Refreshed! Found {newDefineCount - defineCount} new defines");
         }
 
         public void LoadDefineFiles()
