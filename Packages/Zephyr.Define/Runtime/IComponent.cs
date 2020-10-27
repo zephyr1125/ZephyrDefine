@@ -1,4 +1,5 @@
 ﻿using Unity.Entities;
+using UnityEngine;
 
 namespace Zephyr.Define.Runtime
 {
@@ -15,6 +16,9 @@ namespace Zephyr.Define.Runtime
         /// </summary>
         /// <param name="entity"></param>
         void SetECSComponent(EntityManager entityManager, Entity entity);
+
+        void SetECSComponentConverting(GameObjectConversionSystem conversionSystem,
+            Component conventionComponent, EntityManager entityManager, Entity entity);
         
 #if UNITY_EDITOR
         void Init(Define parentDefine);
