@@ -1,4 +1,5 @@
 ﻿using Unity.Entities;
+using UnityEngine;
 
 namespace Zephyr.Define.Runtime
 {
@@ -13,6 +14,13 @@ namespace Zephyr.Define.Runtime
         public virtual void SetECSComponent(EntityManager entityManager, Entity entity)
         {
             //默认不创建ECS组件
+        }
+        
+        public virtual void SetECSComponentConverting(GameObjectConversionSystem conversionSystem,
+            Component conventionComponent, EntityManager entityManager, Entity entity)
+        {
+            //默认与SetECSComponent一致
+            SetECSComponent(entityManager, entity);
         }
         
 #if UNITY_EDITOR
