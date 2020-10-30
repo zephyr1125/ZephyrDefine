@@ -10,15 +10,17 @@ namespace Zephyr.Define.Runtime
         /// </summary>
         /// <returns></returns>
         ComponentType[] GetECSComponentTypes();
-        
+
         /// <summary>
         /// 基于本component进行ECS的component构建的方法,必须实现
         /// </summary>
+        /// <param name="entityManager"></param>
         /// <param name="entity"></param>
-        void SetECSComponent(EntityManager entityManager, Entity entity);
+        /// <param name="components"></param>
+        void SetECSComponent(EntityManager entityManager, Entity entity, Component[] components);
 
         void SetECSComponentConverting(GameObjectConversionSystem conversionSystem,
-            Component conventionComponent, EntityManager entityManager, Entity entity);
+            Component conventionComponent, EntityManager entityManager, Entity entity, Component[] components);
         
 #if UNITY_EDITOR
         void Init(Define parentDefine);
