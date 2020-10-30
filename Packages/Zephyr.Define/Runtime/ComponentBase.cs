@@ -11,13 +11,13 @@ namespace Zephyr.Define.Runtime
             return new ComponentType[] { };
         }
 
-        public virtual void SetECSComponent(EntityManager entityManager, Entity entity, Component[] components)
+        public virtual void SetECSComponent(EntityManager entityManager, Entity entity, IComponent[] components)
         {
             //默认不创建ECS组件
         }
         
         public virtual void SetECSComponentConverting(GameObjectConversionSystem conversionSystem,
-            Component conventionComponent, EntityManager entityManager, Entity entity, Component[] components)
+            Component conventionComponent, EntityManager entityManager, Entity entity, IComponent[] components)
         {
             //默认与SetECSComponent一致
             SetECSComponent(entityManager, entity, components);
