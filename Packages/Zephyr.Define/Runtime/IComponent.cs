@@ -16,11 +16,11 @@ namespace Zephyr.Define.Runtime
         /// </summary>
         /// <param name="entityManager"></param>
         /// <param name="entity"></param>
-        /// <param name="components"></param>
-        void SetECSComponent(EntityManager entityManager, Entity entity, IComponent[] components);
+        /// <param name="define"></param>
+        void SetECSComponent(EntityManager entityManager, Entity entity, IDefine define);
 
         void SetECSComponentConverting(GameObjectConversionSystem conversionSystem,
-            Component conventionComponent, EntityManager entityManager, Entity entity, IComponent[] components);
+            Component conventionComponent, EntityManager entityManager, Entity entity, IDefine define);
         
 #if UNITY_EDITOR
         void Init(Define parentDefine);
