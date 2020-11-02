@@ -11,16 +11,16 @@ namespace Zephyr.Define.Runtime
             return new ComponentType[] { };
         }
 
-        public virtual void SetECSComponent(EntityManager entityManager, Entity entity, IComponent[] components)
+        public virtual void SetECSComponent(EntityManager entityManager, Entity entity, IDefine define)
         {
             //默认不创建ECS组件
         }
         
         public virtual void SetECSComponentConverting(GameObjectConversionSystem conversionSystem,
-            Component conventionComponent, EntityManager entityManager, Entity entity, IComponent[] components)
+            Component conventionComponent, EntityManager entityManager, Entity entity, IDefine define)
         {
             //默认与SetECSComponent一致
-            SetECSComponent(entityManager, entity, components);
+            SetECSComponent(entityManager, entity, define);
         }
         
 #if UNITY_EDITOR
