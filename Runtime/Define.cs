@@ -8,13 +8,16 @@ namespace Zephyr.Define.Runtime
     [CreateAssetMenu(menuName = "Define")]
     public class Define : SerializedScriptableObject, IDefine
     {
+        [ReadOnly]
+        public string Name;
+        
         [ValidateInput("IsComponentsCompatible","组件兼容性有问题，参见输出")]
         [OnValueChanged("OnComponentsChanged", true)]
         public IComponent[] Components = new IComponent[]{};
-
+        
         public string GetName()
         {
-            return name;
+            return Name;
         }
         
         /// <summary>
@@ -102,6 +105,12 @@ namespace Zephyr.Define.Runtime
             {
                 component?.Init(this);
             }
+        }
+
+        protected override void OnBeforeSerialize()
+        {
+            base.OnBeforeSerialize();
+            Name = name;
         }
 #endif
     }
