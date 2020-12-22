@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Zephyr.Define.Runtime
 {
@@ -36,6 +37,20 @@ namespace Zephyr.Define.Runtime
             Instance().LoadDefineFiles();
             var newDefineCount = Instance()._defines.Count;
             Debug.Log($"Defines Refreshed! Found {newDefineCount - defineCount} new defines");
+        }
+        
+        [MenuItem("Zephyr/Reserialize Defines")]
+        public static void Reserialize()
+        {
+            var defineGuids = AssetDatabase.FindAssets("t:Define");
+            foreach (var defineGuid in defineGuids)
+            {
+                var path = AssetDatabase.GUIDToAssetPath(defineGuid);
+                var define = AssetDatabase.LoadAssetAtPath<Object>(path);
+                EditorUtility.SetDirty(define);
+            }
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
 
         public void LoadDefineFiles()
